@@ -99,28 +99,26 @@ void LinkedList::display() {
 
 
 int LinkedList::return_top() {
-	return tail->val;
-}
-
-
-void display_as_stack_reversed(Node* current_node) {
-	if (current_node == nullptr) {
-		return;
+	if (tail == nullptr) {
+		return -1; // Indicating stack is empty.
 	}
-
-	display_as_stack_reversed(current_node->next);
-
-	std::cout << current_node->val << std::endl;
+	return tail->val;
 }
 
 
 void LinkedList::display_as_stack() {
 	if (head == nullptr) {
 		std::cout << "Stack is Empty." << std::endl;
+		return;
 	}
 
-	Node* temp = head;
+	Node* temp = tail;
 	std::cout << "TOP OF STACK" << std::endl;
-	display_as_stack_reversed(temp);
+	while (temp->prev != nullptr) {
+		std::cout << temp->val << std::endl;
+		temp = temp->prev;
+	}
+
+	std::cout << temp->val << std::endl;
 	std::cout << "BOTTOM OF STACK" << std::endl;
 }

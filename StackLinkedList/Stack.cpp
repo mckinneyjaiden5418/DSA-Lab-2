@@ -1,11 +1,6 @@
 #include "Stack.h"
 #include <iostream>
 
-Stack::Stack() {
-	LinkedList linked_list;
-}
-
-
 void Stack::push(int val){
 	linked_list.insert_back(val);
 }

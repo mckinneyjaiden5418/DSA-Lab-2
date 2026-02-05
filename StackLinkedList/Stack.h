@@ -6,7 +6,6 @@ class Stack {
 private:
 	LinkedList linked_list;
 public:
-	Stack();
 	void push(int val);
 	void pop();
 	int peek();
